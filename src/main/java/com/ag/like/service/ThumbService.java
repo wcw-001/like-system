@@ -1,7 +1,9 @@
 package com.ag.like.service;
 
+import com.ag.like.entity.dto.DoThumbRequest;
 import com.ag.like.entity.po.Thumb;
 import com.baomidou.mybatisplus.extension.service.IService;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
 * @author wcw
@@ -10,4 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface ThumbService extends IService<Thumb> {
 
+    Boolean doThumb(DoThumbRequest doThumbRequest, HttpServletRequest request);
+
+    Boolean undoThumb(DoThumbRequest doThumbRequest, HttpServletRequest request);
 }
