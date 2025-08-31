@@ -12,6 +12,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog>
     private UserService userService;
 
     @Resource
+    @Lazy
     private ThumbService thumbService;
     @Override
     public BlogVO getBlogVOById(long blogId, HttpServletRequest request) {

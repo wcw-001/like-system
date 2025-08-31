@@ -3,6 +3,7 @@ package com.ag.like.mapper;
 
 import com.ag.like.entity.po.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author wcw
@@ -10,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2025-08-23 13:26:47
 * @Entity generator.domain.User
 */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
 }
