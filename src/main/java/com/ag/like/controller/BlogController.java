@@ -9,6 +9,7 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,12 +22,12 @@ public class BlogController {
     @Resource
     private BlogService blogService;
 
-    @RequestMapping("/getBlogVOById")
+    @PostMapping("/getBlogVOById")
     public BlogVO getBlogVOById(long blogId, HttpServletRequest request) {
         return blogService.getBlogVOById(blogId, request);
     }
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     public BaseResponse<List<BlogVO>> list(HttpServletRequest request) {
         List<Blog> blogList = blogService.list();
         List<BlogVO> blogVOList = blogService.getBlogVOList(blogList, request);
